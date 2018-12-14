@@ -58,7 +58,17 @@ build_script:
   # - cmd: mpiexec.exe -np 4 modules\task_1\ndanilov_rows_matrix_sum\%configuration%\ndanilov_rows_matrix_sum.exe 10 10
   # - cmd: mpiexec.exe -np 4 modules\task_1\Yunin_Ivan_maximum_elem_vector\%configuration%\Yunin_Ivan_maximum_elem_vector.exe 100
   # - cmd: mpiexec.exe -np 4 modules\task_2\Gaidaichuk_Yuri_task2_Bubble_sorting\%configuration%\Gaidaichuk_Yuri_task2_Bubble_sorting.exe 9
-  - cmd: mpiexec.exe -np 4 modules\task_2\Perov_Dima_task2_ProducerConsumer\%configuration%\Perov_Dima_task2_ProducerConsumer.exe 10 5 5 1 2
-  - cmd: mpiexec.exe -np 4 modules\task_2\Yakovlev_Pavel_mul_matr_vect\%configuration%\Yakovlev_Pavel_mul_matr_vect.exe 50 50
-  - cmd: mpiexec.exe -np 5 modules\task_2\Vdovin_Eugene_task2_Readers_and_Writers\%configuration%\Vdovin_Eugene_task2_Readers_and_Writers.exe 2 60
-  - cmd: mpiexec.exe -np 4 modules\task_2\Repin_Vladimir_Gaussian_Elimination\%configuration%\Repin_Vladimir_Gaussian_Elimination.exe 500
+  # - cmd: mpiexec.exe -np 4 modules\task_2\Perov_Dima_task2_ProducerConsumer\%configuration%\Perov_Dima_task2_ProducerConsumer.exe 10 5 5 1 2
+  # - cmd: mpiexec.exe -np 4 modules\task_2\Yakovlev_Pavel_mul_matr_vect\%configuration%\Yakovlev_Pavel_mul_matr_vect.exe 50 50
+  # - cmd: mpiexec.exe -np 5 modules\task_2\Vdovin_Eugene_task2_Readers_and_Writers\%configuration%\Vdovin_Eugene_task2_Readers_and_Writers.exe 2
+  # - cmd: mpiexec.exe -np 4 modules\task_2\Repin_Vladimir_Gaussian_Elimination\%configuration%\Repin_Vladimir_Gaussian_Elimination.exe 500
+  # - cmd: mpiexec.exe -np 2 modules\task_2\Yunin_Ivan_task2_mult_matrix_vector_div_on_tapes\%configuration%\Yunin_Ivan_task2_mult_matrix_vector_div_on_tapes.exe 1000 1000 0
+  # - cmd: mpiexec.exe -np 4 modules\task_2\Druzhinin_Alexei_mul_matrix\%configuration%\Druzhinin_Alexei_mul_matrix.exe 1000 1000 1000 1000
+  # - cmd: mpiexec.exe -np 4 modules\task_2\Zolotareva_Olesya_task2_Reduce\%configuration%\Zolotareva_Olesya_task2_Reduce.exe 100
+  # - cmd: mpiexec.exe -np 10 modules\task_2\ndanilov_topologies\%configuration%\ndanilov_topologies.exe 7 3 Hello
+  - cmd: mpiexec.exe -np 4 modules\task_3\ndanilov_qsort\%configuration%\ndanilov_qsort.exe 10
+  - cmd: mpiexec.exe -np 4 modules\task_3\Gaidaichuk_Yuri_task3_Monte_Carlo\%configuration%\Gaidaichuk_Yuri_task3_Monte_Carlo 100 0.0 1.0 0.0 1.0 0.5 1.0
+  - cmd: mpiexec.exe -np 4 modules\task_3\Perov_Dima_task3_ShellMergeSort\%configuration%\Perov_Dima_task3_ShellMergeSort.exe 10
+  - cmd: mpiexec.exe -np 4 modules\task_3\Vdovin_Eugene_task3_AGP\%configuration%\Vdovin_Eugene_task3_AGP.exe 1 1000 0.00001
+  - cmd: mpiexec.exe -np 4 modules\task_3\Vikhrev_Ivan_task3_radix_sort\%configuration%\Vikhrev_Ivan_task3_radix_sort.exe 10
+  - cmd: mpiexec.exe -np 4 modules\task_3\Yakovlev_Pavel_Quicksort_SimpleMerge\%configuration%\Yakovlev_Pavel_Quicksort_SimpleMerge.exe 20

@@ -26,16 +26,14 @@ int main(int argc, char *argv[]) {
   int readLock = 0;
   int w = 0;
   std::string s = argv[1];
-  std::string t = argv[2];
   int iter = converter_in_number(s);
-  int tm = converter_in_number(t);
   int end = 1;
   MPI_Init(&argc, &argv);
   MPI_Comm_size(MPI_COMM_WORLD, &ProcNum);
   MPI_Comm_rank(MPI_COMM_WORLD, &ProcRank);
   MPI_Status status;
   if (ProcRank == 0) {
-    double st = MPI_Wtime();
+    int finish = 0;
     while (end) {
       int flag = 0;
       MPI_Iprobe(MPI_ANY_SOURCE, 0, MPI_COMM_WORLD, &flag, &status);
@@ -85,8 +83,14 @@ MPI_Recv(&storage, 1, MPI_INT, MPI_ANY_SOURCE, 6, MPI_COMM_WORLD, &status);
         MPI_Recv(&w, 1, MPI_INT, MPI_ANY_SOURCE, 12, MPI_COMM_WORLD, &status);
         activeReaders--;
       }
-      if ((MPI_Wtime() - st) > tm) {
-        std::cout << "Time end" << std::endl;
+      flag = 0;
+      MPI_Iprobe(MPI_ANY_SOURCE, 15, MPI_COMM_WORLD, &flag, &status);
+      if (flag) {
+        MPI_Recv(&w, 1, MPI_INT, MPI_ANY_SOURCE, 15, MPI_COMM_WORLD, &status);
+        finish++;
+      }
+      if (finish == ProcNum - 1) {
+        std::cout << "Work end" << std::endl;
         end = 0;
       }
     }
@@ -141,7 +145,7 @@ MPI_Recv(&storage, 1, MPI_INT, MPI_ANY_SOURCE, 6, MPI_COMM_WORLD, &status);
         while (MPI_Wtime() - beg < 3) {}
         storage = (std::rand() + writerNumber) % 401 + 100;
         MPI_Send(&storage, 1, MPI_INT, 0, 6, MPI_COMM_WORLD);
-        std::cout << "Writer " << writerNumber << " write in storage";
+        std::cout << "Writer " << writerNumber << " write in storage ";
         std::cout << storage;
         std::cout << " and completed work" << std::endl;
         readLock = 0;
@@ -149,6 +153,7 @@ MPI_Recv(&storage, 1, MPI_INT, MPI_ANY_SOURCE, 6, MPI_COMM_WORLD, &status);
         writeLock = 0;
         MPI_Send(&writeLock, 1, MPI_INT, 0, 2, MPI_COMM_WORLD);
       }
+      MPI_Send(&ProcRank, 1, MPI_INT, 0, 15, MPI_COMM_WORLD);
       break;
     }
     case 1: {
@@ -186,6 +191,7 @@ MPI_Recv(&storage, 1, MPI_INT, MPI_ANY_SOURCE, 6, MPI_COMM_WORLD, &status);
         std::cout << storage << " and completed work" << std::endl;
         MPI_Send(&activeReaders, 1, MPI_INT, 0, 12, MPI_COMM_WORLD);
       }
+      MPI_Send(&ProcRank, 1, MPI_INT, 0, 15, MPI_COMM_WORLD);
       break;
     }
     }

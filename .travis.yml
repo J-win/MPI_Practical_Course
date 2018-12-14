@@ -50,6 +50,7 @@ script:
   # - python ../scripts/static_analysis.py log_cppcheck
   - make -j4
 
+
   - mpirun -np 4 ./modules/test_task/test_task
   - mpirun -np 4 ./modules/experimental/scalar_multiplication/scalar_multiplication 100000
   # - mpirun -np 4 ./modules/task_1/Yakovlev_Pavel_mul_vect/Yakovlev_Pavel_mul_vect 100000
@@ -63,8 +64,18 @@ script:
   # - mpirun -np 4 ./modules/task_1/ndanilov_rows_matrix_sum/ndanilov_rows_matrix_sum 10 10
   # - mpirun -np 4 ./modules/task_1/Yunin_Ivan_maximum_elem_vector/Yunin_Ivan_maximum_elem_vector 100
   # - mpirun -np 4 ./modules/task_2/Gaidaichuk_Yuri_task2_Bubble_sorting/Gaidaichuk_Yuri_task2_Bubble_sorting 9
-  - mpirun -np 4 ./modules/task_2/Perov_Dima_task2_ProducerConsumer/Perov_Dima_task2_ProducerConsumer 10 5 5 1 2
-  - mpirun -np 4 ./modules/task_2/Yakovlev_Pavel_mul_matr_vect/Yakovlev_Pavel_mul_matr_vect 50 50
-  - mpirun -np 5 ./modules/task_2/Vdovin_Eugene_task2_Readers_and_Writers/Vdovin_Eugene_task2_Readers_and_Writers 2 60
-  - mpirun -np 4 ./modules/task_2/Repin_Vladimir_Gaussian_Elimination/Repin_Vladimir_Gaussian_Elimination 500
-  - mpirun -np 4 ./modules/task_2/Vikhrev_Ivan_task2_ImageProcessing/Vikhrev_Ivan_task2_ImageProcessing -x=1000 -y=1000
+  # - mpirun -np 4 ./modules/task_2/Perov_Dima_task2_ProducerConsumer/Perov_Dima_task2_ProducerConsumer 10 5 5 1 2
+  # - mpirun -np 4 ./modules/task_2/Yakovlev_Pavel_mul_matr_vect/Yakovlev_Pavel_mul_matr_vect 50 50
+  # - mpirun -np 5 ./modules/task_2/Vdovin_Eugene_task2_Readers_and_Writers/Vdovin_Eugene_task2_Readers_and_Writers 2
+  # - mpirun -np 4 ./modules/task_2/Repin_Vladimir_Gaussian_Elimination/Repin_Vladimir_Gaussian_Elimination 500
+  # - mpirun -np 4 ./modules/task_2/Vikhrev_Ivan_task2_ImageProcessing/Vikhrev_Ivan_task2_ImageProcessing -x=1000 -y=1000
+  # - mpirun -np 2 ./modules/task_2/Yunin_Ivan_task2_mult_matrix_vector_div_on_tapes/Yunin_Ivan_task2_mult_matrix_vector_div_on_tapes 1000 1000 0
+  # - mpirun -np 4 ./modules/task_2/Druzhinin_Alexei_mul_matrix/Druzhinin_Alexei_mul_matrix 1000 1000 1000 1000
+  # - mpirun -np 4 ./modules/task_2/Zolotareva_Olesya_task2_Reduce/Zolotareva_Olesya_task2_Reduce 100
+  # - mpirun -np 10 ./modules/task_2/ndanilov_topologies/ndanilov_topologies 7 3 Hello
+  - mpirun -np 4 ./modules/task_3/ndanilov_qsort/ndanilov_qsort 10
+  - mpirun -np 4 ./modules/task_3/Gaidaichuk_Yuri_task3_Monte_Carlo/Gaidaichuk_Yuri_task3_Monte_Carlo 100 0.0 1.0 0.0 1.0 0.5 1.0
+  - mpirun -np 4 ./modules/task_3/Perov_Dima_task3_ShellMergeSort/Perov_Dima_task3_ShellMergeSort 10
+  - mpirun -np 4 ./modules/task_3/Vdovin_Eugene_task3_AGP/Vdovin_Eugene_task3_AGP 1 1000 0.00001
+  - mpirun -np 4 ./modules/task_3/Vikhrev_Ivan_task3_radix_sort/Vikhrev_Ivan_task3_radix_sort 10
+  - mpirun -np 4 ./modules/task_3/Yakovlev_Pavel_Quicksort_SimpleMerge/Yakovlev_Pavel_Quicksort_SimpleMerge 20

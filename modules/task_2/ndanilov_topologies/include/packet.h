@@ -1,0 +1,13 @@
+/* Copyright Nikita Danilov */
+#ifndef MODULES_TASK_2_NDANILOV_TOPOLOGIES_INCLUDE_PACKET_H_
+#define MODULES_TASK_2_NDANILOV_TOPOLOGIES_INCLUDE_PACKET_H_
+
+#define MAX_DATA_SIZE 255U
+
+struct packet {
+  int src;
+  int dst;
+  char data[MAX_DATA_SIZE];
+};
+
+#endif  // MODULES_TASK_2_NDANILOV_TOPOLOGIES_INCLUDE_PACKET_H_
