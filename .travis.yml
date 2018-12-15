@@ -81,3 +81,4 @@ script:
   - mpirun -np 4 ./modules/task_3/Yakovlev_Pavel_Quicksort_SimpleMerge/Yakovlev_Pavel_Quicksort_SimpleMerge 20
   - mpirun -np 4 ./modules/task_3/Druzhinin_Alexei_task3_Shell_with_SimpleMerge/Druzhinin_Alexei_task3_Shell_with_SimpleMerge 20
   - mpirun -np 4 ./modules/task_3/Repin_Vladimir_Edge_Detection/Repin_Vladimir_Edge_Detection
+  - mpirun -np 4 ./modules/task_3/zolotareva_task3_LSD_Radix_Sort/zolotareva_task3_LSD_Radix_Sort 10
