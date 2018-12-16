@@ -180,7 +180,7 @@ void init_map(Point * res, int n, int u_bound, int l_bound) {
 int main(int argc, char*argv[]) {
     srand(static_cast<int>(time(0)));
     int num_p = 100;
-    int proc_num, proc_id, flag, sub_num_p;
+    int proc_num, proc_id, flag, sub_num_p, s_r_s;
     double s_time_start = 0.0, p_time_start = 0.0;
     double s_time_finish = 0.0, p_time_finish = 0.0;
     Point *points = NULL, *seq_res = NULL, *par_res = NULL,
@@ -234,8 +234,8 @@ int main(int argc, char*argv[]) {
     p_time_start = MPI_Wtime();
     MPI_Scatter(points2 , sub_num_p, PNT, sub_points,
     sub_num_p, PNT, 0, MPI_COMM_WORLD);
-    sub_res_size[proc_id] = convex_hull(sub_points, sub_res, sub_num_p);
-    MPI_Gather(sub_res_size+proc_id, 1, MPI_INT, sub_res_size, 1,
+    s_r_s = convex_hull(sub_points, sub_res, sub_num_p);
+    MPI_Gather(s_r_s, 1, MPI_INT, sub_res_size, 1,
                MPI_INT, 0, MPI_COMM_WORLD);
     MPI_Gather(sub_res, sub_num_p, PNT, par_res, sub_num_p, PNT, 0,
                MPI_COMM_WORLD);
