@@ -260,12 +260,6 @@ int main(int argc, char*argv[]) {
         std::cout << "seq " << s_time_finish - s_time_start << std::endl;
         std::cout << "par " << p_time_finish - p_time_start << std::endl;
     }
-    if ( points     != NULL ) { delete[]points;     }
-    if ( seq_res    != NULL ) { delete[]seq_res;    }
-    if ( par_res    != NULL ) { delete[]par_res;    }
-    if ( sub_points != NULL ) { delete[]sub_points; }
-    if ( sub_res    != NULL ) { delete[]sub_res;    }
-    if ( points2    != NULL ) { delete[]points2;    }
     MPI_Finalize();
     return 0;
 }
