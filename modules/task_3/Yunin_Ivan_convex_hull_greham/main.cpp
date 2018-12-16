@@ -262,7 +262,6 @@ int main(int argc, char*argv[]) {
         p_time_finish = MPI_Wtime();
         std::cout << "seq " << s_time_finish - s_time_start << std::endl;
         std::cout << "par " << p_time_finish - p_time_start << std::endl;
-
     }
     if ( points     != NULL ) { delete[]points;     }
     if ( seq_res    != NULL ) { delete[]seq_res;    }
