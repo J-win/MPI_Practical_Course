@@ -180,7 +180,7 @@ void init_map(Point * res, int n, int u_bound, int l_bound) {
 int main(int argc, char*argv[]) {
     srand(static_cast<int>(time(0)));
     int num_p = 100;
-    int proc_num, proc_id, flag, sub_num_p, seq_res_size;
+    int proc_num, proc_id, flag, sub_num_p;
     double s_time_start = 0.0, p_time_start = 0.0;
     double s_time_finish = 0.0, p_time_finish = 0.0;
     Point *points = NULL, *seq_res = NULL, *par_res = NULL,
@@ -226,7 +226,7 @@ int main(int argc, char*argv[]) {
         for (int i = 0; i < num_p; i++)
         points2[i] = points[i];
         s_time_start = MPI_Wtime();
-        seq_res_size = convex_hull(points, seq_res, num_p);
+        convex_hull(points, seq_res, num_p);
         s_time_finish = MPI_Wtime();
         qsort(&points2[0], num_p, sizeof(Point), compare_X);
     }
