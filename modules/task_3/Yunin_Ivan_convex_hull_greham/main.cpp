@@ -94,7 +94,6 @@ int merger(Point *a, Point *b, Point *out, int size_a, int size_b) {
     int uppera = inda, upperb = indb;
     inda = ia, indb = ib;
     done = 0;
-    int g = 0;
     while (!done) {
         done = 1;
         while (orientation(a[inda], b[indb], b[(indb+1)%n2]) >= 0)
@@ -214,7 +213,6 @@ int main(int argc, char*argv[]) {
     MPI_Comm_rank(MPI_COMM_WORLD, &proc_id);
     // static_cast<double>
     sub_num_p = num_p/proc_num;
-    int tail = num_p%proc_num;
     int *sub_res_size = new int[proc_num];
     sub_points = new Point[sub_num_p];
     sub_res = new Point[sub_num_p];
