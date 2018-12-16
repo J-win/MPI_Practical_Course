@@ -202,9 +202,9 @@ int main(int argc, char*argv[]) {
         std::cout << "Init MPI Error";
         return 0;
     }
-    MPI_Address(&(for_disp), &addresses[0]);
-    MPI_Address(&(for_disp.x), &addresses[1]);
-    MPI_Address(&(for_disp.y), &addresses[2]);
+    MPI_Get_address(&(for_disp), &addresses[0]);
+    MPI_Get_address(&(for_disp.x), &addresses[1]);
+    MPI_Get_address(&(for_disp.y), &addresses[2]);
     disp[0] = addresses[1] - addresses[0];
     disp[1] = addresses[2] - addresses[0];
 
