@@ -241,7 +241,6 @@ int main(int argc, char*argv[]) {
                MPI_COMM_WORLD);
     MPI_Barrier(MPI_COMM_WORLD);
     if (proc_id == 0) {
-        int flag;
         int shift = 0;
         int for_merge_size[2]={ num_p, num_p };
         for_merge[0] = new Point[num_p];
