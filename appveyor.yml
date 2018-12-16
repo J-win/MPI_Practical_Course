@@ -73,4 +73,5 @@ build_script:
   - cmd: mpiexec.exe -np 4 modules\task_3\Vikhrev_Ivan_task3_radix_sort\%configuration%\Vikhrev_Ivan_task3_radix_sort.exe 10
   - cmd: mpiexec.exe -np 4 modules\task_3\Yakovlev_Pavel_Quicksort_SimpleMerge\%configuration%\Yakovlev_Pavel_Quicksort_SimpleMerge.exe 20
   - cmd: mpiexec.exe -np 4 modules\task_3\Druzhinin_Alexei_task3_Shell_with_SimpleMerge\%configuration%\Druzhinin_Alexei_task3_Shell_with_SimpleMerge.exe 20
+  - cmd: mpiexec.exe -np 4 modules\task_3\Yunin_Ivan_convex_hull_greham\%configuration%\Yunin_Ivan_convex_hull_greham.exe 100
   # - cmd: mpiexec.exe -np 4 modules\task_3\zolotareva_task3_LSD_Radix_Sort\%configuration%\zolotareva_task3_LSD_Radix_Sort.exe 10
