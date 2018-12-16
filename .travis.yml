@@ -79,3 +79,6 @@ script:
   - mpirun -np 4 ./modules/task_3/Vdovin_Eugene_task3_AGP/Vdovin_Eugene_task3_AGP 1 1000 0.00001
   - mpirun -np 4 ./modules/task_3/Vikhrev_Ivan_task3_radix_sort/Vikhrev_Ivan_task3_radix_sort 10
   - mpirun -np 4 ./modules/task_3/Yakovlev_Pavel_Quicksort_SimpleMerge/Yakovlev_Pavel_Quicksort_SimpleMerge 20
+  - mpirun -np 4 ./modules/task_3/Druzhinin_Alexei_task3_Shell_with_SimpleMerge/Druzhinin_Alexei_task3_Shell_with_SimpleMerge 20
+  - mpirun -np 4 ./modules/task_3/Repin_Vladimir_Edge_Detection/Repin_Vladimir_Edge_Detection
+  - mpirun -np 4 ./modules/task_3/zolotareva_task3_LSD_Radix_Sort/zolotareva_task3_LSD_Radix_Sort 10
