@@ -235,7 +235,7 @@ int main(int argc, char*argv[]) {
     MPI_Scatter(points2 , sub_num_p, PNT, sub_points,
     sub_num_p, PNT, 0, MPI_COMM_WORLD);
     s_r_s = convex_hull(sub_points, sub_res, sub_num_p);
-    MPI_Gather(s_r_s, 1, MPI_INT, sub_res_size, 1,
+    MPI_Gather(&s_r_s, 1, MPI_INT, sub_res_size, 1,
                MPI_INT, 0, MPI_COMM_WORLD);
     MPI_Gather(sub_res, sub_num_p, PNT, par_res, sub_num_p, PNT, 0,
                MPI_COMM_WORLD);
